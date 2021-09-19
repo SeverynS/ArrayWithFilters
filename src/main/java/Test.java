@@ -37,8 +37,8 @@ public class Test {
             hashMaps.add(new HashMap<>(mapTemp));
         }
 
-        for (int i = 0; i < hashMaps.size(); i++) {
-            mapTemp = hashMaps.get(i);
+        for (HashMap hashMap : hashMaps) {
+            mapTemp = hashMap;
             for (Map.Entry<String, String> entry : mapTemp.entrySet()) {
                 if (entry.getKey().equals(ruleKey) && entry.getValue().equals(ruleValue)) {
                     result++;
