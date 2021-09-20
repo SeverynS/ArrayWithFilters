@@ -23,6 +23,7 @@ public class Test {
         System.out.println(parameterFiltering(arr, "color", "black"));
         System.out.println(parameterFiltering(arr, "type", "phone"));
         System.out.println(parameterFiltering(arr, "name", "iphone"));
+        System.out.println(parameterFiltering(arr, "color", "gold"));
     }
 
     private static int parameterFiltering(String[] arr, String ruleKey, String ruleValue) {
