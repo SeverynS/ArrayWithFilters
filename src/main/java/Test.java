@@ -14,12 +14,12 @@ public class Test {
     public static void main(String[] args) {
 
         List<List<String>> inputData = new ArrayList<>(Arrays.asList(
-                Collections.singletonList("phone, black, xiaomi"),
-                Collections.singletonList("phone, white, iphone"),
-                Collections.singletonList("pc, silver, dell"),
-                Collections.singletonList("laptop, pink, macbook"),
-                Collections.singletonList("headphones, gold, airpods"),
-                Collections.singletonList("phone, gold, iphone")
+                Arrays.asList("phone", "black", "xiaomi"),
+                Arrays.asList("phone", "white", "iphone"),
+                Arrays.asList("pc", "silver", "dell"),
+                Arrays.asList("laptop", "pink", "macbook"),
+                Arrays.asList("headphones", "gold", "airpods"),
+                Arrays.asList("phone", "gold", "iphone")
         ));
 
         System.out.println(parameterFiltering(inputData, "color", "black"));
@@ -34,12 +34,9 @@ public class Test {
         boolean color = ruleKey.equals("color");
         boolean name = ruleKey.equals("name");
         for (List l : arr) {
-            String s = l.toString();
-            String s2 = s.substring(1, s.length() - 1);
-            String[] strArr = s2.split(", ");
-            if (type && ruleValue.equals(strArr[0])
-                    || color && ruleValue.equals(strArr[1])
-                    || name && ruleValue.equals(strArr[2])) {
+            if (type && ruleValue.equals(l.get(0))
+                    || color && ruleValue.equals(l.get(1))
+                    || name && ruleValue.equals(l.get(2))) {
                 result++;
             }
         }
