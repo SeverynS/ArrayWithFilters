@@ -30,15 +30,15 @@ public class Test {
         int result = 0;
         List<String> stringList = stringSplitting(arr);
         HashMap<String, String> mapTemp = new HashMap<>();
-        List<HashMap> hashMaps = new ArrayList<>();
+        List<HashMap> listMaps = new ArrayList<>();
         for (int i = 0; i < stringList.size(); i += 3) {
             mapTemp.put("type", stringList.get(i));
             mapTemp.put("color", stringList.get(i + 1));
             mapTemp.put("name", stringList.get(i + 2));
-            hashMaps.add(new HashMap<>(mapTemp));
+            listMaps.add(new HashMap<>(mapTemp));
         }
 
-        for (HashMap hashMap : hashMaps) {
+        for (HashMap hashMap : listMaps) {
             mapTemp = hashMap;
             for (Map.Entry<String, String> entry : mapTemp.entrySet()) {
                 if (entry.getKey().equals(ruleKey) && entry.getValue().equals(ruleValue)) {
